@@ -3,6 +3,131 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+<<<<<<< Updated upstream
 a {
   color: #00B7FF;
+=======
+.mainContainer {
+  display: flex;
+}
+
+.title {
+}
+.myWeapon {
+}
+
+.mainBox {
+  display: flex;
+  align-items: stretch;
+  width: 1000px;
+  height: 1000px;
+  border: 5px solid black;
+}
+
+.firstCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.myArtifacts {
+}
+
+.secondCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.wantedArtifacts {
+}
+
+.flower {
+}
+.plume {
+}
+.sands {
+}
+.goblet {
+}
+.circlet {
+}
+
+.substatText {
+}
+.flowerText {
+}
+.plumeText {
+}
+.sandsText {
+}
+.gobletText {
+}
+.circletText {
+}
+
+.thirdCol {
+  display: flex;
+  flex-direction: column;
+}
+.tickbox1 {
+}
+.tickbox2 {
+}
+.tickbox3 {
+}
+.tickbox4 {
+}
+.tickbox5 {
+}
+.clear {
+}
+
+.artifactImgs {
+}
+
+.repeatedMainBox {
+}
+
+.apiBox {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 30% 30% 30%;
+  gap: 4px 4px;
+  grid-template-areas:
+    'a a'
+    'b b'
+    'c d'
+    'c e';
+}
+.charSelect {
+}
+.weaponReco {
+}
+.artiApi {
+}
+.artiSetApi {
+}
+.statsApi {
+}
+.sgcApi {
+}
+.substatsApi {
+>>>>>>> Stashed changes
+}
+.gridareaa {
+  grid-area: a;
+}
+
+.gridareab {
+  grid-area: b;
+}
+
+.gridareac {
+  grid-area: c;
+}
+
+.gridaread {
+  grid-area: d;
+}
+.gridareae {
+  grid-area: e;
 }
