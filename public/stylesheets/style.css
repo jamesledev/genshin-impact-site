@@ -1,12 +1,8 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-<<<<<<< Updated upstream
-a {
-  color: #00B7FF;
-=======
 .mainContainer {
   display: flex;
 }
@@ -111,7 +107,6 @@ a {
 .sgcApi {
 }
 .substatsApi {
->>>>>>> Stashed changes
 }
 .gridareaa {
   grid-area: a;
