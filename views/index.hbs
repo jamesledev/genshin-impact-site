@@ -1,5 +1,8 @@
+<h1 class='title'>Genshin Impact plan!</h1>
 <main class='mainContainer'>
-  <h1 class='title'>GI plan!</h1>
+
+  <div class='myWeapon'></div>
+
   <div class='mainBox'>
     <div class='firstCol myArtifacts'>
       <div class='flower'>
@@ -37,7 +40,17 @@
       <div class='circletText'>
       </div>
     </div>
-    <div class='artifactImgs'>
+    <div class='thirdCol'>
+      <div class='tickbox1'></div>
+      <div class='tickbox2'></div>
+      <div class='tickbox3'></div>
+      <div class='tickbox4'></div>
+      <div class='tickbox5'></div>
+      <div>
+        <button class='clear'>Clear</button>
+      </div>
+    </div>
+    <div class='artifactImgs draggable'>
     </div>
     <div>
       <button class='clear'>Clear</button>
@@ -48,16 +61,43 @@
   <div class='repeatedMainBox'></div>
 
 
-
   <div class='apiBox'>
-    <div class='charSelect'>
+    <div class='gridareaa'>
+      <label for='chars'>Select a char:</label>
+      <select name='chars' onchange="myFunction()" class='charName'>
+        {{#each characterNames}}
+        <option value={{this}}>{{this}}</option>
+        {{/each}}
+      </select>
     </div>
-    <div class='weaponReco'>
+    <div class='weaponReco gridareab'>
     </div>
-    <div class='artApi'>
-      <div class='artSetApi'></div>
-      <div class='sgcApi'></div>
-      <div class='substatsApi'></div>
+    <div class='artiSetApi gridareac'>
+    </div>
+    <div class='sgcApi gridaread'>
+    </div>
+    <div class='substatsApi gridareae'>
     </div>
   </div>
+  </div>
+  </div>
+
 </main>
+
+<script>
+  const genshinNames = {{{ chracterNamestString }}}
+  console.log(genshinNames)
+  const genshinDeets = {{{ chracterDeetString }}}
+  console.log(genshinDeets)
+  function myFunction() {
+    let nameCheck = document.querySelector('.charName').value
+    const characterDetails = genshinDeets[nameCheck]
+    console.log(characterDetails)
+    document.querySelector('.weaponReco').innerHTML = characterDetails.weapon
+    document.querySelector('.artiSetApi').innerHTML = characterDetails.arti
+    document.querySelector('.sgcApi').innerHTML = characterDetails.sgc
+    document.querySelector('.substatsApi').innerHTML = characterDetails.substat
+
+  }
+
+</script>
