@@ -10,84 +10,139 @@ body {
 .title {
 }
 .myWeapon {
+  height: 40px;
+  width: 500px;
 }
-
+.weaponText {
+  height: 15px;
+  width: 150px;
+}
 .mainBox {
-  display: flex;
-  align-items: stretch;
-  width: 1000px;
-  height: 1000px;
-  border: 5px solid black;
+  display: grid;
+  grid-template-columns: 150px 150px 300px 30px 300px;
+  grid-template-rows: 150px 150px 150px 150px 150px;
+  gap: 4px 4px;
+  border: 2px solid black;
 }
-
-.firstCol {
-  display: flex;
-  flex-direction: column;
+/* .firstCol {
 }
-
 .myArtifacts {
 }
-
 .secondCol {
-  display: flex;
-  flex-direction: column;
 }
-
 .wantedArtifacts {
+} */
+.border {
+  border: 2px solid black;
+}
+.myFlower {
+  grid-row-start: 1;
+}
+.myPlume {
+  grid-row-start: 2;
+}
+.mySands {
+  grid-row-start: 3;
+}
+.myGoblet {
+  grid-row-start: 4;
+}
+.myCirclet {
+  grid-row-start: 5;
 }
 
 .flower {
+  grid-column-start: 2;
+  grid-row-start: 1;
 }
 .plume {
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 .sands {
+  grid-column-start: 2;
+  grid-row-start: 3;
 }
 .goblet {
+  grid-column-start: 2;
+  grid-row-start: 4;
 }
 .circlet {
+  grid-column-start: 2;
+  grid-row-start: 5;
 }
 
-.substatText {
-}
+/* .substatText {
+} */
 .flowerText {
+  grid-column-start: 3;
+  grid-row-start: 1;
 }
 .plumeText {
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 .sandsText {
+  grid-column-start: 3;
+  grid-row-start: 3;
 }
 .gobletText {
+  grid-column-start: 3;
+  grid-row-start: 4;
 }
 .circletText {
+  grid-column-start: 3;
+  grid-row-start: 5;
 }
-
-.thirdCol {
-  display: flex;
-  flex-direction: column;
+.textBoxSize {
+  width: 290px;
+  height: 141px;
+}
+/* .thirdCol {
+} */
+.center {
+  align-self: center;
+  justify-self: center;
 }
 .tickbox1 {
+  grid-column-start: 4;
+  grid-row-start: 1;
 }
 .tickbox2 {
+  grid-column-start: 4;
+  grid-row-start: 2;
 }
 .tickbox3 {
+  grid-column-start: 4;
+  grid-row-start: 3;
 }
 .tickbox4 {
+  grid-column-start: 4;
+  grid-row-start: 4;
 }
 .tickbox5 {
+  grid-column-start: 4;
+  grid-row-start: 5;
 }
 .clear {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  text-align: center;
 }
 
 .artifactImgs {
-}
-
-.repeatedMainBox {
+  grid-column-start: 5;
+  grid-row-start: 1;
+  grid-row-end: 6;
 }
 
 .apiBox {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 30% 30% 30%;
-  gap: 4px 4px;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 50px 40px 70px 70px;
+  gap: 8px 8px;
   grid-template-areas:
     'a a'
     'b b'

@@ -1,67 +1,83 @@
 <h1 class='title'>Genshin Impact plan!</h1>
+<div class='myWeapon'>
+  Current Weapon: <textarea class='weaponText'></textarea>
+</div>
 <main class='mainContainer'>
-  <div class='myWeapon'></div>
   <div class='mainBox'>
-    <div class='firstCol myArtifacts'>
-      <div class='flower'>
+    {{!-- <div class='firstCol myArtifacts'> --}}
+      <div class='myFlower border'>
       </div>
-      <div class='plume'>
+      <div class='myPlume border'>
       </div>
-      <div class='sands'>
+      <div class='mySands border'>
       </div>
-      <div class='goblet'>
+      <div class='myGoblet border'>
       </div>
-      <div class='circlet'>
+      <div class='myCirclet border'>
       </div>
-    </div>
-    <div class='secondCol wantedArtifacts'>
-      <div class='flower'>
+      {{!--
+    </div> --}}
+    {{!-- <div class='secondCol wantedArtifacts'> --}}
+      <div class='flower  border'>
       </div>
-      <div class='plume'>
+      <div class='plume border'>
       </div>
-      <div class='sands'>
+      <div class='sands border'>
       </div>
-      <div class='goblet'>
+      <div class='goblet border'>
       </div>
-      <div class='circlet'>
+      <div class='circlet border'>
       </div>
-    </div>
-    <div class='substatText'>
-      <div class='flowerText'>
+      {{!--
+    </div> --}}
+    {{!-- <div class='substatText'> --}}
+      <div class='flowerText border'>
+        <textarea class='textBoxSize' rows="5"></textarea>
       </div>
-      <div class='plumeText'>
+      <div class='plumeText border'>
+        <textarea class='textBoxSize' rows="5"></textarea>
       </div>
-      <div class='sandsText'>
+      <div class='sandsText border'>
+        <textarea class='textBoxSize' rows="5"></textarea>
       </div>
-      <div class='gobletText'>
+      <div class='gobletText border'>
+        <textarea class='textBoxSize' rows="5"></textarea>
       </div>
-      <div class='circletText'>
+      <div class='circletText border'>
+        <textarea class='textBoxSize' rows="5"></textarea>
       </div>
+      {{!--
+    </div> --}}
+    {{!-- <div class='thirdCol'> --}}
+      <div class='tickbox1 center border'>
+        <input type="checkbox">
+      </div>
+      <div class='tickbox2 center border'>
+        <input type="checkbox">
+      </div>
+      <div class='tickbox3 center border'>
+        <input type="checkbox">
+      </div>
+      <div class='tickbox4 center border'>
+        <input type="checkbox">
+      </div>
+      <div class='tickbox5  center border'>
+        <input type="checkbox">
+      </div>
+      {{!--
+    </div> --}}
+    <div class='artifactImgs draggable  border'>
     </div>
 
-    <div class='artifactImgs'>
-
-      <div class='thirdCol'>
-        <div class='tickbox1'></div>
-        <div class='tickbox2'></div>
-        <div class='tickbox3'></div>
-        <div class='tickbox4'></div>
-        <div class='tickbox5'></div>
-      </div>
-      <div class='artifactImgs draggable'>
-      </div>
-      <div>
-        <button class='clear'>Clear</button>
-      </div>
-      <div class='myWeapon'></div>
-    </div>
   </div>
-  <div class='repeatedMainBox'></div>
+  <button class='clear  border'>Clear</button>
+
 
 
   <div class='apiBox'>
-    <div class='gridareaa'>
-      <label for='chars'>Select a char:</label>
+
+    <div class='gridarea'>
+      <label for='chars'>Recommended Build:<br>Select a character!:</label>
       <select name='chars' onchange="myFunction()" class='charName'>
         {{#each characterNames}}
         <option value={{this}}>{{this}}</option>
