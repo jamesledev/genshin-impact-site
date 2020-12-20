@@ -19,8 +19,8 @@ body {
 }
 .mainBox {
   display: grid;
-  grid-template-columns: 150px 150px 300px 30px 300px;
-  grid-template-rows: 150px 150px 150px 150px 150px;
+  grid-template-columns: 160px 160px 300px 30px 520px;
+  grid-template-rows: 160px 160px 160px 160px 160px;
   gap: 4px 4px;
   border: 2px solid black;
 }
@@ -96,7 +96,8 @@ body {
 }
 .textBoxSize {
   width: 290px;
-  height: 141px;
+  height: 150px;
+  resize: none;
 }
 /* .thirdCol {
 } */
@@ -136,6 +137,13 @@ body {
   grid-column-start: 5;
   grid-row-start: 1;
   grid-row-end: 6;
+  overflow: scroll;
+}
+.artifactImg {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  text-align: center;
 }
 
 .apiBox {
