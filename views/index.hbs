@@ -4,27 +4,25 @@
 </div>
 <main class='mainContainer'>
   <div class='mainBox'>
-
-    <div class='myFlower draggable dropzone border' data-artifact='flower'>
+    <div class='myFlower draggable border' data-artifact='flower'>
     </div>
-    <div class='myPlume draggable dropzone border' data-artifact='plume'>
+    <div class='myPlume draggable border' data-artifact='plume'>
     </div>
-    <div class='mySands draggable dropzone border' data-artifact='sands'>
+    <div class='mySands draggable border' data-artifact='sands'>
     </div>
-    <div class='myGoblet draggable dropzone border' data-artifact='goblet'>
+    <div class='myGoblet draggable border' data-artifact='goblet'>
     </div>
-    <div class='myCirclet draggable dropzone border' data-artifact='circlet'>
+    <div class='myCirclet draggable border' data-artifact='circlet'>
     </div>
-
-    <div class='flower draggable dropzone  border' data-artifact='flower'>
+    <div class='flower draggable  border' data-artifact='flower'>
     </div>
-    <div class='plume draggable dropzone border' data-artifact='plume'>
+    <div class='plume draggable border' data-artifact='plume'>
     </div>
-    <div class='sands draggable dropzone border' data-artifact='sands'>
+    <div class='sands draggable border' data-artifact='sands'>
     </div>
-    <div class='goblet draggable dropzone border' data-artifact='goblet'>
+    <div class='goblet draggable border' data-artifact='goblet'>
     </div>
-    <div class='circlet draggable dropzone border' data-artifact='circlet'>
+    <div class='circlet draggable border' data-artifact='circlet'>
     </div>
 
     <div class='flowerText border'>
@@ -59,7 +57,7 @@
       <input type="checkbox" class='checkBox'>
     </div>
 
-    <div class='artifactImgs draggable dropzone border'>
+    <div class='artifactImgs draggableTwo border'>
 
       {{#each imgNames}}
       <div class="artifactImg" data-artifact='{{this.artifactType}}'>{{artifactSet}}
@@ -67,11 +65,9 @@
       </div>
       {{/each}}
     </div>
-
   </div>
+
   <button class='clear btn border'>Clear</button>
-
-
 
   <div class='apiBox'>
 
@@ -97,25 +93,22 @@
 
 <script>
 
-  const droppable = new Draggable.Droppable(document.querySelectorAll('.draggable'), {
-    draggable: 'div',
-    dropzone: '.dropzone'
+
+  dragula([...document.querySelectorAll('.draggable'), document.querySelector('.draggableTwo')], {
+    copy: function (el, source) {
+      return source === document.querySelector('.draggableTwo')
+    },
+    accepts: function (el, target) {
+      const elementArtifactType = el.getAttribute('data-artifact');
+      const targetArtifactType = target.getAttribute('data-artifact');
+
+      return elementArtifactType === targetArtifactType;
+    },
+    removeOnSpill: true
+  }).on('drop', (el, container) => {
+    container.innerHTML = '';
+    container.appendChild(el);
   });
-
-  let droppableOrigin;
-
-  // --- Draggable events --- //
-  droppable.on('drag:start', (evt) => {
-    droppableOrigin = evt.originalSource.dataset.artifact;
-  });
-
-  droppable.on('droppable:dropped', (evt) => {
-    const isParentContainer = evt.dropzone.classList.contains('artifactImgs')
-    if (droppableOrigin !== evt.dropzone.dataset.artifact && !isParentContainer) {
-      evt.cancel();
-    }
-  });
-
 
   const genshinNames = {{{ chracterNamestString }}};
   // console.log(genshinNames);
@@ -132,18 +125,19 @@
   };
 
   const clear = document.querySelector('.btn');
-  const text = document.querySelectorAll('.textBox');
-  const checkBox = document.querySelectorAll('.checkBox');
-
-  clear.addEventListener('click', function () {
+  clear.addEventListener('click', () => {
+    const text = document.querySelectorAll('.textBox');
+    const checkBox = document.querySelectorAll('.checkBox');
+    const draggable = document.querySelectorAll('.draggable')
     console.log('hello?')
-    for (var i = 0; i < text.length; i++) {
-      const textVar = text[i];
-      textVar.value = " Main Stat:";
-    };
-    for (var i = 0; i < checkBox.length; i++) {
-      const checkBoxVar = checkBox[i];
-      checkBoxVar.checked = false;
+    for (var i = 0; i < draggable.length; i++) {
+
+      if (text[i]) {
+        const textVar = text[i];
+        textVar.value = " Main Stat:";
+        checkBox[i].checked = false;
+      }
+      draggable[i].innerHTML = '';
     };
   });
 
