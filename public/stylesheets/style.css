@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .mainContainer {
@@ -19,8 +19,8 @@ body {
 }
 .mainBox {
   display: grid;
-  grid-template-columns: 160px 160px 300px 30px 520px;
-  grid-template-rows: 160px 160px 160px 160px 160px;
+  grid-template-columns: 200px 200px 300px 30px 650px;
+  grid-template-rows: 200px 200px 200px 200px 200px;
   gap: 4px 4px;
   border: 2px solid black;
 }
@@ -99,9 +99,11 @@ body {
 }
 .textBoxSize {
   width: 290px;
-  height: 150px;
+  height: 190px;
   resize: none;
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
+
 /* .thirdCol {
 } */
 .center {
@@ -144,15 +146,16 @@ body {
 }
 .artifactImg {
   display: inline-block;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   text-align: center;
 }
 
 .apiBox {
+  font-size: 20px;
   display: grid;
-  grid-template-columns: 150px 150px;
-  grid-template-rows: 50px 40px 70px 70px;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 100px 80px 100px 100px;
   gap: 8px 8px;
   grid-template-areas:
     'a a'
@@ -214,4 +217,20 @@ body {
   opacity: 0.2;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
   filter: alpha(opacity=20);
+}
+
+[contentEditable='true']:empty:not(:focus):before {
+  content: attr(data-texting);
+}
+
+.preText {
+  color: red;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.fontColor {
+  color: red;
 }

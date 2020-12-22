@@ -5,40 +5,50 @@
 <main class='mainContainer'>
   <div class='mainBox'>
     <div class='myFlower draggable border' data-artifact='flower'>
+      <div class='preText' contentEditable="true" data-texting='Current Flower'></div>
     </div>
     <div class='myPlume draggable border' data-artifact='plume'>
+      <div class='preText' contentEditable="true" data-texting='Current Plume'></div>
     </div>
     <div class='mySands draggable border' data-artifact='sands'>
+      <div class='preText' contentEditable="true" data-texting='Current Sandstorm'></div>
     </div>
     <div class='myGoblet draggable border' data-artifact='goblet'>
+      <div class='preText' contentEditable="true" data-texting='Current Golbet'></div>
     </div>
     <div class='myCirclet draggable border' data-artifact='circlet'>
+      <div class='preText' contentEditable="true" data-texting='Current Circlet'></div>
     </div>
     <div class='flower draggable  border' data-artifact='flower'>
+      <div class='preText' contentEditable="true" data-texting='Desired Flower'></div>
     </div>
     <div class='plume draggable border' data-artifact='plume'>
+      <div class='preText' contentEditable="true" data-texting='Desired Plume'></div>
     </div>
     <div class='sands draggable border' data-artifact='sands'>
+      <div class='preText' contentEditable="true" data-texting='Desired Sandstorm'></div>
     </div>
     <div class='goblet draggable border' data-artifact='goblet'>
+      <div class='preText' contentEditable="true" data-texting='Desired Golbet'></div>
     </div>
     <div class='circlet draggable border' data-artifact='circlet'>
+      <div class='preText' contentEditable="true" data-texting='Desired Circlet'></div>
     </div>
 
     <div class='flowerText border'>
-      <textarea class='textBoxSize textBox' rows="5"> Main Stat:</textarea>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
     </div>
     <div class='plumeText border'>
-      <textarea class='textBoxSize textBox' rows="5"> Main Stat:</textarea>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
     </div>
     <div class='sandsText border'>
-      <textarea class='textBoxSize textBox' rows="5"> Main Stat:</textarea>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
     </div>
     <div class='gobletText border'>
-      <textarea class='textBoxSize textBox' rows="5"> Main Stat:</textarea>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
     </div>
     <div class='circletText border'>
-      <textarea class='textBoxSize textBox' rows="5"> Main Stat:</textarea>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
     </div>
 
     <div class='tickbox1 center border'>
@@ -80,6 +90,7 @@
       </select>
     </div>
     <div class='weaponReco gridareab'>
+
     </div>
     <div class='artiSetApi gridareac'>
     </div>
@@ -118,10 +129,10 @@
     let nameCheck = document.querySelector('.charName').value;
     const characterDetails = genshinDeets[nameCheck];
     //console.log(characterDetails);
-    document.querySelector('.weaponReco').innerHTML = characterDetails.weapon;
-    document.querySelector('.artiSetApi').innerHTML = characterDetails.arti;
-    document.querySelector('.sgcApi').innerHTML = characterDetails.sgc;
-    document.querySelector('.substatsApi').innerHTML = characterDetails.substat;
+    document.querySelector('.weaponReco').innerHTML = "<div class='fontColor'>Recommended Weapons: </div>" + characterDetails.weapon;
+    document.querySelector('.artiSetApi').innerHTML = "<div class='fontColor'>Recommended Artifact Sets: </div>" + characterDetails.arti;
+    document.querySelector('.sgcApi').innerHTML = "<div class='fontColor'>Recommended SGC Stats: </div>" + characterDetails.sgc;
+    document.querySelector('.substatsApi').innerHTML = "<div class='fontColor'>Recommended Substats: </div>" + characterDetails.substat;
   };
 
   const clear = document.querySelector('.btn');
@@ -138,6 +149,7 @@
         checkBox[i].checked = false;
       }
       draggable[i].innerHTML = '';
+
     };
   });
 
