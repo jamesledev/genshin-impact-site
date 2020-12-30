@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .mainContainer {
@@ -10,84 +10,153 @@ body {
 .title {
 }
 .myWeapon {
+  height: 40px;
+  width: 500px;
 }
-
+.weaponText {
+  height: 15px;
+  width: 150px;
+}
 .mainBox {
-  display: flex;
-  align-items: stretch;
-  width: 1000px;
-  height: 1000px;
-  border: 5px solid black;
+  display: grid;
+  grid-template-columns: 200px 200px 300px 30px 650px;
+  grid-template-rows: 200px 200px 200px 200px 200px;
+  gap: 4px 4px;
+  border: 2px solid black;
 }
-
-.firstCol {
-  display: flex;
-  flex-direction: column;
-}
-
-.myArtifacts {
+/* .firstCol {
 }
 
 .secondCol {
-  display: flex;
-  flex-direction: column;
 }
-
 .wantedArtifacts {
+} */
+.myArtifacts {
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+.border {
+  border: 2px solid black;
+}
+.myFlower {
+  grid-row-start: 1;
+}
+.myPlume {
+  grid-row-start: 2;
+}
+.mySands {
+  grid-row-start: 3;
+}
+.myGoblet {
+  grid-row-start: 4;
+}
+.myCirclet {
+  grid-row-start: 5;
 }
 
 .flower {
+  grid-column-start: 2;
+  grid-row-start: 1;
 }
 .plume {
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 .sands {
+  grid-column-start: 2;
+  grid-row-start: 3;
 }
 .goblet {
+  grid-column-start: 2;
+  grid-row-start: 4;
 }
 .circlet {
+  grid-column-start: 2;
+  grid-row-start: 5;
 }
 
-.substatText {
-}
+/* .substatText {
+} */
 .flowerText {
+  grid-column-start: 3;
+  grid-row-start: 1;
 }
 .plumeText {
+  grid-column-start: 3;
+  grid-row-start: 2;
 }
 .sandsText {
+  grid-column-start: 3;
+  grid-row-start: 3;
 }
 .gobletText {
+  grid-column-start: 3;
+  grid-row-start: 4;
 }
 .circletText {
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+.textBoxSize {
+  width: 290px;
+  height: 190px;
+  resize: none;
+  font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-.thirdCol {
-  display: flex;
-  flex-direction: column;
+/* .thirdCol {
+} */
+.center {
+  align-self: center;
+  justify-self: center;
 }
 .tickbox1 {
+  grid-column-start: 4;
+  grid-row-start: 1;
 }
 .tickbox2 {
+  grid-column-start: 4;
+  grid-row-start: 2;
 }
 .tickbox3 {
+  grid-column-start: 4;
+  grid-row-start: 3;
 }
 .tickbox4 {
+  grid-column-start: 4;
+  grid-row-start: 4;
 }
 .tickbox5 {
+  grid-column-start: 4;
+  grid-row-start: 5;
 }
 .clear {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  text-align: center;
 }
 
 .artifactImgs {
+  grid-column-start: 5;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  overflow: scroll;
 }
-
-.repeatedMainBox {
+.artifactImg {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  text-align: center;
 }
 
 .apiBox {
+  font-size: 20px;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 30% 30% 30%;
-  gap: 4px 4px;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 100px 80px 100px 100px;
+  gap: 8px 8px;
   grid-template-areas:
     'a a'
     'b b'
@@ -125,4 +194,43 @@ body {
 }
 .gridareae {
   grid-area: e;
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+  filter: alpha(opacity=20);
+}
+
+[contentEditable='true']:empty:not(:focus):before {
+  content: attr(data-texting);
+}
+
+.preText {
+  color: red;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.fontColor {
+  color: red;
 }

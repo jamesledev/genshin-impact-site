@@ -1,74 +1,96 @@
 <h1 class='title'>Genshin Impact plan!</h1>
+<div class='myWeapon'>
+  Current Weapon: <textarea class='weaponText'></textarea>
+</div>
 <main class='mainContainer'>
-  <div class='myWeapon'></div>
   <div class='mainBox'>
-    <div class='firstCol myArtifacts'>
-      <div class='flower'>
-      </div>
-      <div class='plume'>
-      </div>
-      <div class='sands'>
-      </div>
-      <div class='goblet'>
-      </div>
-      <div class='circlet'>
-      </div>
+    <div class='myFlower draggable border' data-artifact='flower'>
+      <div class='preText' contentEditable="true" data-texting='Current Flower'></div>
     </div>
-    <div class='secondCol wantedArtifacts'>
-      <div class='flower'>
-      </div>
-      <div class='plume'>
-      </div>
-      <div class='sands'>
-      </div>
-      <div class='goblet'>
-      </div>
-      <div class='circlet'>
-      </div>
+    <div class='myPlume draggable border' data-artifact='plume'>
+      <div class='preText' contentEditable="true" data-texting='Current Plume'></div>
     </div>
-    <div class='substatText'>
-      <div class='flowerText'>
-      </div>
-      <div class='plumeText'>
-      </div>
-      <div class='sandsText'>
-      </div>
-      <div class='gobletText'>
-      </div>
-      <div class='circletText'>
-      </div>
+    <div class='mySands draggable border' data-artifact='sands'>
+      <div class='preText' contentEditable="true" data-texting='Current Sandstorm'></div>
+    </div>
+    <div class='myGoblet draggable border' data-artifact='goblet'>
+      <div class='preText' contentEditable="true" data-texting='Current Golbet'></div>
+    </div>
+    <div class='myCirclet draggable border' data-artifact='circlet'>
+      <div class='preText' contentEditable="true" data-texting='Current Circlet'></div>
+    </div>
+    <div class='flower draggable  border' data-artifact='flower'>
+      <div class='preText' contentEditable="true" data-texting='Desired Flower'></div>
+    </div>
+    <div class='plume draggable border' data-artifact='plume'>
+      <div class='preText' contentEditable="true" data-texting='Desired Plume'></div>
+    </div>
+    <div class='sands draggable border' data-artifact='sands'>
+      <div class='preText' contentEditable="true" data-texting='Desired Sandstorm'></div>
+    </div>
+    <div class='goblet draggable border' data-artifact='goblet'>
+      <div class='preText' contentEditable="true" data-texting='Desired Golbet'></div>
+    </div>
+    <div class='circlet draggable border' data-artifact='circlet'>
+      <div class='preText' contentEditable="true" data-texting='Desired Circlet'></div>
     </div>
 
-    <div class='artifactImgs'>
+    <div class='flowerText border'>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+    </div>
+    <div class='plumeText border'>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+    </div>
+    <div class='sandsText border'>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+    </div>
+    <div class='gobletText border'>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+    </div>
+    <div class='circletText border'>
+      <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+    </div>
 
-      <div class='thirdCol'>
-        <div class='tickbox1'></div>
-        <div class='tickbox2'></div>
-        <div class='tickbox3'></div>
-        <div class='tickbox4'></div>
-        <div class='tickbox5'></div>
+    <div class='tickbox1 center border'>
+      <input type="checkbox" class='checkBox'>
+    </div>
+    <div class='tickbox2 center border'>
+      <input type="checkbox" class='checkBox'>
+    </div>
+    <div class='tickbox3 center border'>
+      <input type="checkbox" class='checkBox'>
+    </div>
+    <div class='tickbox4 center border'>
+      <input type="checkbox" class='checkBox'>
+    </div>
+    <div class='tickbox5  center border'>
+      <input type="checkbox" class='checkBox'>
+    </div>
+
+    <div class='artifactImgs draggableTwo border'>
+
+      {{#each imgNames}}
+      <div class="artifactImg" data-artifact='{{this.artifactType}}'>{{artifactSet}}
+        <img src='/images/{{this.file}}' width='140px' height='auto' />
       </div>
-      <div class='artifactImgs draggable'>
-      </div>
-      <div>
-        <button class='clear'>Clear</button>
-      </div>
-      <div class='myWeapon'></div>
+      {{/each}}
     </div>
   </div>
-  <div class='repeatedMainBox'></div>
 
+  <button class='clear btn border'>Clear</button>
 
   <div class='apiBox'>
-    <div class='gridareaa'>
-      <label for='chars'>Select a char:</label>
-      <select name='chars' onchange="myFunction()" class='charName'>
+
+    <div class='gridarea'>
+      <label for='chars'>Recommended Build:<br>Select a character!:</label>
+      <select name='chars' onchange=" myFunction()" class='charName'>
         {{#each characterNames}}
         <option value={{this}}>{{this}}</option>
         {{/each}}
       </select>
     </div>
     <div class='weaponReco gridareab'>
+
     </div>
     <div class='artiSetApi gridareac'>
     </div>
@@ -81,19 +103,55 @@
 </main>
 
 <script>
-  const genshinNames = {{{ chracterNamestString }}}
-  console.log(genshinNames)
-  const genshinDeets = {{{ chracterDeetString }}}
-  console.log(genshinDeets)
-  function myFunction() {
-    let nameCheck = document.querySelector('.charName').value
-    const characterDetails = genshinDeets[nameCheck]
-    console.log(characterDetails)
-    document.querySelector('.weaponReco').innerHTML = characterDetails.weapon
-    document.querySelector('.artiSetApi').innerHTML = characterDetails.arti
-    document.querySelector('.sgcApi').innerHTML = characterDetails.sgc
-    document.querySelector('.substatsApi').innerHTML = characterDetails.substat
 
-  }
+
+  dragula([...document.querySelectorAll('.draggable'), document.querySelector('.draggableTwo')], {
+    copy: function (el, source) {
+      return source === document.querySelector('.draggableTwo')
+    },
+    accepts: function (el, target) {
+      const elementArtifactType = el.getAttribute('data-artifact');
+      const targetArtifactType = target.getAttribute('data-artifact');
+
+      return elementArtifactType === targetArtifactType;
+    },
+    removeOnSpill: true
+  }).on('drop', (el, container) => {
+    container.innerHTML = '';
+    container.appendChild(el);
+  });
+
+  const genshinNames = {{{ chracterNamestString }}};
+  // console.log(genshinNames);
+  const genshinDeets = {{{ chracterDeetString }}};
+  //console.log(genshinDeets);
+  function myFunction() {
+    let nameCheck = document.querySelector('.charName').value;
+    const characterDetails = genshinDeets[nameCheck];
+    //console.log(characterDetails);
+    document.querySelector('.weaponReco').innerHTML = "<div class='fontColor'>Recommended Weapons: </div>" + characterDetails.weapon;
+    document.querySelector('.artiSetApi').innerHTML = "<div class='fontColor'>Recommended Artifact Sets: </div>" + characterDetails.arti;
+    document.querySelector('.sgcApi').innerHTML = "<div class='fontColor'>Recommended SGC Stats: </div>" + characterDetails.sgc;
+    document.querySelector('.substatsApi').innerHTML = "<div class='fontColor'>Recommended Substats: </div>" + characterDetails.substat;
+  };
+
+  const clear = document.querySelector('.btn');
+  clear.addEventListener('click', () => {
+    const text = document.querySelectorAll('.textBox');
+    const checkBox = document.querySelectorAll('.checkBox');
+    const draggable = document.querySelectorAll('.draggable')
+    console.log('hello?')
+    for (var i = 0; i < draggable.length; i++) {
+
+      if (text[i]) {
+        const textVar = text[i];
+        textVar.value = " Main Stat:";
+        checkBox[i].checked = false;
+      }
+      draggable[i].innerHTML = '';
+
+    };
+  });
+
 
 </script>
