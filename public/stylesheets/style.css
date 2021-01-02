@@ -1,13 +1,31 @@
 body {
   padding: 50px;
   font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: rgb(109, 158, 180);
 }
-
+.background {
+  background-image: url('/moreImages/wallpaper.png');
+  color: white;
+  max-width: 1900px;
+  margin: 0px;
+}
 .mainContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1380px 40px 300px;
+  background-color: white;
+  /* color: white; */
+  max-width: 1900px;
 }
-
-.title {
+.paimon {
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
+  float: right;
+}
+.paimon2 {
+  height: 120px;
+  width: auto;
+  border-radius: 50%;
 }
 .myWeapon {
   height: 40px;
@@ -16,21 +34,15 @@ body {
 .weaponText {
   height: 15px;
   width: 150px;
+  resize: none;
 }
 .mainBox {
   display: grid;
-  grid-template-columns: 200px 200px 300px 30px 650px;
+  grid-template-columns: 200px 200px 250px 30px 650px;
   grid-template-rows: 200px 200px 200px 200px 200px;
   gap: 4px 4px;
-  border: 2px solid black;
-}
-/* .firstCol {
 }
 
-.secondCol {
-}
-.wantedArtifacts {
-} */
 .myArtifacts {
   grid-row-start: 1;
   grid-row-end: 5;
@@ -75,8 +87,6 @@ body {
   grid-row-start: 5;
 }
 
-/* .substatText {
-} */
 .flowerText {
   grid-column-start: 3;
   grid-row-start: 1;
@@ -98,14 +108,14 @@ body {
   grid-row-start: 5;
 }
 .textBoxSize {
-  width: 290px;
+  width: 238px;
   height: 190px;
   resize: none;
   font: 18px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  /* background-color: grey; */
+  /* color: white; */
 }
 
-/* .thirdCol {
-} */
 .center {
   align-self: center;
   justify-self: center;
@@ -144,38 +154,27 @@ body {
   grid-row-end: 6;
   overflow: scroll;
 }
-.artifactImg {
+.artifactImgBox {
   display: inline-block;
   width: 200px;
   height: 200px;
   text-align: center;
 }
+.artifactImg {
+  width: 150px;
+  height: 150px;
+}
 
 .apiBox {
   font-size: 20px;
   display: grid;
-  grid-template-columns: 300px 300px;
-  grid-template-rows: 100px 80px 100px 100px;
-  gap: 8px 8px;
+  grid-template-columns: 200px 200px;
+
   grid-template-areas:
     'a a'
     'b b'
     'c d'
     'c e';
-}
-.charSelect {
-}
-.weaponReco {
-}
-.artiApi {
-}
-.artiSetApi {
-}
-.statsApi {
-}
-.sgcApi {
-}
-.substatsApi {
 }
 .gridareaa {
   grid-area: a;
@@ -224,13 +223,36 @@ body {
 }
 
 .preText {
-  color: red;
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.8;
+  color: red;
 }
 
 .fontColor {
-  color: red;
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 831px) {
+  .mainContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+  .mainBox {
+    display: grid;
+    grid-template-columns: 200px 200px 250px 30px;
+    grid-template-rows: 200px 200px 200px 200px 200px 500px;
+    gap: 4px 4px;
+  }
+
+  .artifactImgs {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    overflow: scroll;
+  }
 }
