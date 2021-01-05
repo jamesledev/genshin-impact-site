@@ -9,15 +9,16 @@ body {
   border: 4px solid black;
   border-radius: 5px;
   border-bottom-width: 0px;
+  max-width: 100vh;
+  min-width: 1352px;
 }
 main {
   border: 4px solid black;
   border-radius: 5px;
-}
-.wholeBox {
   max-width: 100vh;
   min-width: 1352px;
 }
+
 .mainContainer {
   display: flex;
   flex-wrap: wrap;
