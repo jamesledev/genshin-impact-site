@@ -23,7 +23,9 @@ main {
   grid-template-columns: 1380px 40px 300px;
   background-color: white;
 }
-
+.wholeBox {
+  max-width: 2000px;
+}
 .paimon2 {
   height: 120px;
   width: auto;
