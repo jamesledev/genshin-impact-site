@@ -25,6 +25,7 @@ main {
 }
 .wholeBox {
   max-width: 2000px;
+  margin: 0 auto;
 }
 .paimon2 {
   height: 120px;
