@@ -1,113 +1,115 @@
-<div class='background'>
-  <h1 class='title'>Genshin Impact plan!
-    <img class='paimon2' src='/moreImages/picture.jpg' />
-  </h1>
-  <div class='myWeapon'>
-    Current Weapon: <textarea class='weaponText'></textarea>
+<div class='wholeBox'>
+  <div class='background'>
+    <h1 class='title'>Genshin Impact plan!
+      <img class='paimon2' src='/moreImages/picture.jpg' />
+    </h1>
+    <div class='myWeapon'>
+      Current Weapon: <textarea class='weaponText'></textarea>
+    </div>
   </div>
-</div>
-<main>
-  <div class='mainContainer'>
-    <div class='mainBox parent'>
+  <main>
+    <div class='mainContainer'>
+      <div class='mainBox parent'>
 
-      <div class='myFlower draggable border' data-artifact='flower'>
-        <div class='preText' contentEditable="true" data-texting='Current Flower'></div>
-      </div>
-      <div class='myPlume draggable border' data-artifact='plume'>
-        <div class='preText' contentEditable="true" data-texting='Current Plume'></div>
-      </div>
-      <div class='mySands draggable border' data-artifact='sands'>
-        <div class='preText' contentEditable="true" data-texting='Current Sandstorm'></div>
-      </div>
-      <div class='myGoblet draggable border' data-artifact='goblet'>
-        <div class='preText' contentEditable="true" data-texting='Current Golbet'></div>
-      </div>
-      <div class='myCirclet draggable border' data-artifact='circlet'>
-        <div class='preText' contentEditable="true" data-texting='Current Circlet'></div>
-      </div>
-      <div class='flower draggable  border' data-artifact='flower'>
-        <div class='preText' contentEditable="true" data-texting='Desired Flower'></div>
-      </div>
-      <div class='plume draggable border' data-artifact='plume'>
-        <div class='preText' contentEditable="true" data-texting='Desired Plume'></div>
-      </div>
-      <div class='sands draggable border' data-artifact='sands'>
-        <div class='preText' contentEditable="true" data-texting='Desired Sandstorm'></div>
-      </div>
-      <div class='goblet draggable border' data-artifact='goblet'>
-        <div class='preText' contentEditable="true" data-texting='Desired Golbet'></div>
-      </div>
-      <div class='circlet draggable border' data-artifact='circlet'>
-        <div class='preText' contentEditable="true" data-texting='Desired Circlet'></div>
-      </div>
-
-      <div class='flowerText border'>
-        <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
-      </div>
-      <div class='plumeText border'>
-        <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
-      </div>
-      <div class='sandsText border'>
-        <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
-      </div>
-      <div class='gobletText border'>
-        <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
-      </div>
-      <div class='circletText border'>
-        <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
-      </div>
-
-      <div class='tickbox1 center border'>
-        <input type="checkbox" class='checkBox'>
-      </div>
-      <div class='tickbox2 center border'>
-        <input type="checkbox" class='checkBox'>
-      </div>
-      <div class='tickbox3 center border'>
-        <input type="checkbox" class='checkBox'>
-      </div>
-      <div class='tickbox4 center border'>
-        <input type="checkbox" class='checkBox'>
-      </div>
-      <div class='tickbox5  center border'>
-        <input type="checkbox" class='checkBox'>
-      </div>
-
-      <div class='artifactImgs draggableTwo border child2'>
-
-        {{#each imgNames}}
-        <div class="artifactImgBox" data-artifact='{{this.artifactType}}'>{{artifactSet}}
-          <img src='/images/{{this.file}}' class="artifactImg" />
+        <div class='myFlower draggable border' data-artifact='flower'>
+          <div class='preText' contentEditable="true" data-texting='Current Flower'></div>
         </div>
-        {{/each}}
-      </div>
-    </div>
-    <div style='padding: 20px'>
-      <button class='clear btn border'>Clear</button>
-    </div>
-    <div class='apiBox'>
+        <div class='myPlume draggable border' data-artifact='plume'>
+          <div class='preText' contentEditable="true" data-texting='Current Plume'></div>
+        </div>
+        <div class='mySands draggable border' data-artifact='sands'>
+          <div class='preText' contentEditable="true" data-texting='Current Sandstorm'></div>
+        </div>
+        <div class='myGoblet draggable border' data-artifact='goblet'>
+          <div class='preText' contentEditable="true" data-texting='Current Golbet'></div>
+        </div>
+        <div class='myCirclet draggable border' data-artifact='circlet'>
+          <div class='preText' contentEditable="true" data-texting='Current Circlet'></div>
+        </div>
+        <div class='flower draggable  border' data-artifact='flower'>
+          <div class='preText' contentEditable="true" data-texting='Desired Flower'></div>
+        </div>
+        <div class='plume draggable border' data-artifact='plume'>
+          <div class='preText' contentEditable="true" data-texting='Desired Plume'></div>
+        </div>
+        <div class='sands draggable border' data-artifact='sands'>
+          <div class='preText' contentEditable="true" data-texting='Desired Sandstorm'></div>
+        </div>
+        <div class='goblet draggable border' data-artifact='goblet'>
+          <div class='preText' contentEditable="true" data-texting='Desired Golbet'></div>
+        </div>
+        <div class='circlet draggable border' data-artifact='circlet'>
+          <div class='preText' contentEditable="true" data-texting='Desired Circlet'></div>
+        </div>
 
-      <div class='gridarea'>
-        <label for='chars'>Recommended Build:<br>Select a character!:</label>
-        <select name='chars' onchange=" myFunction()" class='charName'>
-          {{#each characterNames}}
-          <option value={{this}}>{{this}}</option>
+        <div class='flowerText border'>
+          <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+        </div>
+        <div class='plumeText border'>
+          <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+        </div>
+        <div class='sandsText border'>
+          <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+        </div>
+        <div class='gobletText border'>
+          <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+        </div>
+        <div class='circletText border'>
+          <textarea class='textBoxSize textBox' rows="5"> Main Stat: </textarea>
+        </div>
+
+        <div class='tickbox1 center border'>
+          <input type="checkbox" class='checkBox'>
+        </div>
+        <div class='tickbox2 center border'>
+          <input type="checkbox" class='checkBox'>
+        </div>
+        <div class='tickbox3 center border'>
+          <input type="checkbox" class='checkBox'>
+        </div>
+        <div class='tickbox4 center border'>
+          <input type="checkbox" class='checkBox'>
+        </div>
+        <div class='tickbox5  center border'>
+          <input type="checkbox" class='checkBox'>
+        </div>
+
+        <div class='artifactImgs draggableTwo border child2'>
+
+          {{#each imgNames}}
+          <div class="artifactImgBox" data-artifact='{{this.artifactType}}'>{{artifactSet}}
+            <img src='/images/{{this.file}}' class="artifactImg" />
+          </div>
           {{/each}}
-        </select>
+        </div>
       </div>
-      <div class='weaponReco gridareab'>
+      <div style='padding: 20px'>
+        <button class='clear btn border'>Clear</button>
+      </div>
+      <div class='apiBox'>
 
-      </div>
-      <div class='artiSetApi gridareac'>
-      </div>
-      <div class='sgcApi gridaread'>
-      </div>
-      <div class='substatsApi gridareae'>
+        <div class='gridarea'>
+          <label for='chars'>Recommended Build:<br>Select a character!:</label>
+          <select name='chars' onchange=" myFunction()" class='charName'>
+            {{#each characterNames}}
+            <option value={{this}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class='weaponReco gridareab'>
+
+        </div>
+        <div class='artiSetApi gridareac'>
+        </div>
+        <div class='sgcApi gridaread'>
+        </div>
+        <div class='substatsApi gridareae'>
+        </div>
       </div>
     </div>
-  </div>
-</main>
-<img class='paimon' src='/moreImages/paimon.png' />
+  </main>
+  <img class='paimon' src='/moreImages/paimon.png' />
+</div>
 <script>
 
 
