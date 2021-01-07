@@ -4,9 +4,6 @@
       <h1 class='title'>Genshin Impact plan!
         <img class='paimon2' src='/moreImages/picture.jpg' />
       </h1>
-      <div>
-        {{!-- <img class='dissapear' src='/moreImages/wallpaper.png' /> --}}
-      </div>
     </div>
     <div class='myWeapon'>
       Current Weapon: <textarea class='weaponText'></textarea>
@@ -117,7 +114,6 @@
 </div>
 <script>
 
-
   dragula([...document.querySelectorAll('.draggable'), document.querySelector('.draggableTwo')], {
     copy: function (el, source) {
       return source === document.querySelector('.draggableTwo')
@@ -137,15 +133,28 @@
   const genshinNames = {{{ chracterNamestString }}};
   // console.log(genshinNames);
   const genshinDeets = {{{ chracterDeetString }}};
-  //console.log(genshinDeets);
+  // console.log(genshinDeets)
   function myFunction() {
     let nameCheck = document.querySelector('.charName').value;
     const characterDetails = genshinDeets[nameCheck];
-    //console.log(characterDetails);
+    //console.log(nameCheck);    
+    if (characterDetails.weapon === undefined) {
+      characterDetails.weapon = ''
+    }
+    if (characterDetails.arti === undefined) {
+      characterDetails.arti = ''
+    }
+    if (characterDetails.substat === undefined) {
+      characterDetails.substat = ''
+    }
+    if (characterDetails.sgc === undefined) {
+      characterDetails.sgc = ''
+    }
     document.querySelector('.weaponReco').innerHTML = "<div class='fontColor'>Recommended Weapons: </div>" + characterDetails.weapon;
     document.querySelector('.artiSetApi').innerHTML = "<div class='fontColor'>Recommended Artifact Sets: </div>" + characterDetails.arti;
     document.querySelector('.sgcApi').innerHTML = "<div class='fontColor'>Recommended SGC Stats: </div>" + characterDetails.sgc;
     document.querySelector('.substatsApi').innerHTML = "<div class='fontColor'>Recommended Substats: </div>" + characterDetails.substat;
+
   };
 
   const clear = document.querySelector('.btn');
