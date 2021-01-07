@@ -14,7 +14,7 @@ function forLoop(response) {
   const shortcut = response.data.values;
   for (var i = 1; i < shortcut.length; i++) {
     const characterDetail = shortcut[i];
-    const name = characterDetail[charNamePos];
+    const name = characterDetail[charNamePos].replace(' ', '');
     const weapon = characterDetail[charWeaponPos];
     const arti = characterDetail[charartiPos];
     const sgc = characterDetail[charSGCPos];
@@ -62,7 +62,7 @@ router.get('/', async function (req, res, next) {
       imgNames,
     };
     // console.log(genshinObject);
-
+    // console.log(characterDeet);
     res.render('index', genshinObject);
   } catch (error) {
     const message =
